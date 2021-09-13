@@ -2,7 +2,6 @@ from random import randint
 from pyfiglet import figlet_format
 
 answer_num = randint(0, 11)
-print(answer_num)
 chances = 4
 count = 0
 
