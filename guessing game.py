@@ -10,23 +10,24 @@ user_answer = int(input(
 # When The Input Is Wrong
 while answer_num != user_answer:
     print("\n")
-    count += 1
 
     # Alert For The Last Chance
-    if count == chances:
+    if count == (chances - 1):
         print("Be Careful, This is your last chance")
     # Afer The Last Chance Is Wrong
-    if count > chances:
-        print(figlet_format("SORRY YOU LOST"))
+    if count == chances:
+        print(figlet_format("YOU LOSE"))
         break
     # The Wrong Number And Hint Message
-    if (count < chances) and (answer_num > user_answer):
+    if (count < chances - 1) and (answer_num > user_answer):
         print(
             f"Wrong number, {chances - count} chances left\n[HINT]: Try a higher number")
 
-    if (count < chances) and (answer_num < user_answer):
+    if (count < chances - 1) and (answer_num < user_answer):
         print(
             f"Wrong number, {chances - count} chances left\n[HINT]: Try a lower number")
+    count += 1
+
     user_answer = int(input("\nYour answer: "))
 
 
